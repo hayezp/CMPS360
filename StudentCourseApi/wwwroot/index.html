@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Student Courses</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f2fa;
+            margin: 40px;
+        }
+
+        h1 {
+            color: #593b80;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #593b80;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f2fa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Student Courses</h1>
+    <p>Here are the courses I'm taking this semester.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Credits</th>
+                <th>Instructor</th>
+            </tr>
+        </thead>
+        <tbody id="courseTable"></tbody>
+    </table>
+
+    <script>
+        fetch('/api/courses')
+            .then(response => response.json())
+            .then(courses => {
+                const table = document.getElementById('courseTable');
+
+                courses.forEach(course => {
+                    const row = document.createElement('tr');
+
+                    [course.code, course.title, course.credits, course.instructor]
+                        .forEach(value => {
+                            const cell = document.createElement('td');
+                            cell.textContent = value;
+                            row.appendChild(cell);
+                        });
+
+                    table.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading courses:', error);
+            });
+    </script>
+
+</body>
+</html>

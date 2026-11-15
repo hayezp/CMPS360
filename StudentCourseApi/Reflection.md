@@ -1,0 +1,7 @@
+## Assignment 8 Reflection
+
+Before starting this assignment, I knew nothing about ASP.NET Core or how to create an API using C#. Since I've mostly worked with Java in my programming classes, this was something completely new to me. I also liked being able to use my actual college courses for the project instead of making up information.
+I already had some understanding of GET, POST, PUT, and DELETE from previous coding classes, but I hadn't used them like this before. It was interesting seeing how they worked in an actual API. I liked being able to pull up my courses in the browser and use the terminal to add, update, and delete them.
+One issue I ran into was getting a 404 error when I first tried opening my courses in the browser. At first, I wasn't sure why the page wasn't working because my application had started successfully. I learned that a 404 means the requested page or route couldn't be found. I checked the URL, entered the correct address, and my courses showed up.
+I also learned how JavaScript's `fetch()` can get information from an API and display it on a webpage. Seeing my actual classes show up in the table helped me understand how the frontend and backend connect.
+Overall, this assignment helped me understand APIs better, even though I'm still learning C# and ASP.NET Core.
